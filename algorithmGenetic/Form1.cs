@@ -55,6 +55,12 @@ namespace algorithmGenetic
                 case 2:
                     result = (x - 1) * (x - 1) + (y - 3) * (y - 3) + 4 * (z + 5) * (z + 5);
                     return result;
+                case 3:
+                    result = (y - x * x) * (y - x * x) + (1 - x) * (1 - x);
+                    return result;
+                case 4:
+                    result = 3 * (x - 4) * (x - 4) + 5 * (y + 3) * (y + 3) + 7 * (2 * z + 1) * (2 * z + 1);
+                    return result;
                 default:
                     return result;
             }
@@ -110,6 +116,37 @@ namespace algorithmGenetic
                     textBox11.Visible = true;
 
                     label2.Text = "f(x,y,z) = (x - 1)^2 + (y - 3)^2 + 4(z + 5)^2\n";
+                    break;
+                case 3:
+                    dimension = 2;
+
+                    label9.Text = "Bound X: ";
+                    textBox6.Visible = true;
+                    textBox7.Visible = true;
+                    label10.Text = "Bound Y: ";
+                    textBox8.Visible = true;
+                    textBox9.Visible = true;
+                    label11.Visible = false;
+                    textBox10.Visible = false;
+                    textBox11.Visible = false;
+
+                    label2.Text = "f(x,y) = (y - x^2)^2 + (1 - x)^2\n";
+                    break;
+                case 4:
+                    dimension = 3;
+
+                    label9.Text = "Bound X: ";
+                    textBox6.Visible = true;
+                    textBox7.Visible = true;
+                    label10.Text = "Bound Y: ";
+                    textBox8.Visible = true;
+                    textBox9.Visible = true;
+                    label11.Text = "Bound Z: ";
+                    label11.Visible = true;
+                    textBox10.Visible = true;
+                    textBox11.Visible = true;
+
+                    label2.Text = "f(x,y,z) = 3(x - 4)^2 + 5(y + 3)^2 + 7(2z + 1)^2\n";
                     break;
                 default:
                     dimension = 1;

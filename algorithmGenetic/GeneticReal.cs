@@ -55,10 +55,10 @@ namespace algorithmGenetic
 
                     if (random.NextDouble() < crossoverRate)
                     {
-                        Chromosome<double> child = CrossoverBinary(firstParent, lastParent);
+                        Chromosome<double> child = Crossover(firstParent, lastParent);
 
                         if (random.NextDouble() < mutationRate)
-                            child = MutateBinary(child);
+                            child = Mutate(child);
 
                         newPopulation.Add(child);
 
@@ -111,7 +111,7 @@ namespace algorithmGenetic
         }
 
         // Crossing
-        private Chromosome<double> CrossoverBinary(Chromosome<double> firstParent, Chromosome<double> secondParent)
+        private Chromosome<double> Crossover(Chromosome<double> firstParent, Chromosome<double> secondParent)
         {
             double alpha = random.NextDouble();
             double x = CheckBound(alpha * firstParent.X + (1 - alpha) * secondParent.X, xmin, xmax);
@@ -136,7 +136,7 @@ namespace algorithmGenetic
         }
 
         // Mutation
-        private Chromosome<double> MutateBinary(Chromosome<double> chromosome)
+        private Chromosome<double> Mutate(Chromosome<double> chromosome)
         {
             double mutation = random.NextDouble() * 0.1;
             chromosome.X = CheckBound(chromosome.X + mutation, xmin, xmax);

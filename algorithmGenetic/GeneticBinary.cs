@@ -133,7 +133,7 @@ namespace algorithmGenetic
             return population.Last();
         }
 
-        // Вычисление значения функции
+        // Calculating the function value
         public double FitnessFunction(Chromosome<string> chromosome)
         {
             double x = BinaryStringToDouble(chromosome.X, xmin, xmax);
@@ -142,7 +142,7 @@ namespace algorithmGenetic
             return form.FitnessFunction(x, y, z);
         }
 
-        // Преобразование битовой строки в значение
+        // Converting a bit string to a value
         public double BinaryStringToDouble(string binaryString, double min, double max)
         {
             double maxPossibleValue = Math.Pow(2, chromosomeLength) - 1;
